@@ -8,9 +8,11 @@
 
 import UIKit
 
-class BinarySearchTree<T>: NSObject {
+class BinarySearchTree<T:Comparable>: NSObject {
     var size:Int = 0
-    var root:Node<T>? //根节点
+    private var root:Node<T>? //根节点
+//    private var comparable:Compactor? //比较器协议
+    
     func sizeFun() -> Int {
         return size
     }
@@ -25,7 +27,7 @@ class BinarySearchTree<T>: NSObject {
     }
     
     //添加节点
-    func add(element:Node<T>?){
+    func add(element:T?){
         //判断非空
         guard let element=element else {
             print("传入节点为null")
@@ -34,7 +36,7 @@ class BinarySearchTree<T>: NSObject {
         
         //添加第一个节点
         if root==nil {
-            root=Node(element: T.self as! T, parent: nil)
+            root=Node(element:element, parent: nil)
             return
         }
         //添加的不是跟节点
@@ -42,7 +44,7 @@ class BinarySearchTree<T>: NSObject {
         var node:Node=root!
         var comp:Int=0
         while node==nil {
-            comp=compare(element1: element, element2: node)
+            comp=compare(element1: element, element2: node.element!)
             parent=node
             if comp==0 {
                 return
@@ -53,12 +55,13 @@ class BinarySearchTree<T>: NSObject {
             }
         }
         
-//        let nwNode=Node(element: element, parent: parent)
+        let nwNode=Node(element: element, parent: parent)
         if comp>0 {
-//            parent.right =
+            parent.right = nwNode
         }else{
-//            parent.left = nwNode
+            parent.left = nwNode
         }
+        size+=1
     }
     
     func remove(element:T){
@@ -66,6 +69,7 @@ class BinarySearchTree<T>: NSObject {
     }
     
     func contains(element:T)->Bool{
+        
         return false
     }
     
@@ -73,18 +77,20 @@ class BinarySearchTree<T>: NSObject {
     
     /// 比较两个节点
     /// - Parameters:
-    ///   - element1: 节点1
-    ///   - element2: 节点2
+    ///   - element1: 参数1
+    ///   - element2: 参数2
     /// - Returns: 比较结果：0是相等。大于0，e1>e2。小于0,e1<e2
-    func compare(element1:Node<T>,element2:Node<T>)->Int
+    private func compare(element1:T,element2:T)->Int
     {
-        
-        if(element1.element as! Int ==  element2.element as! Int){
-            return 0
-        }else if (element1.element as! Int > element1.element as! Int){
-            return 1
-        }else{
-            return -1
-        }
+//        element1.comp
+      return   element1.compareTo(element2 as! T.T)
+//        return 0
+//        if(element1.element as! Int ==  element2.element as! Int){
+//            return 0
+//        }else if (element1.element as! Int > element1.element as! Int){
+//            return 1
+//        }else{
+//            return -1
+//        }
     }
 }
