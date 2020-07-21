@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Person: NSObject,Comparable {
+class Person: NSObject,Compactor{
     
     typealias T = Person
     
@@ -18,11 +18,10 @@ class Person: NSObject,Comparable {
         super.init()
         self.age=age
     }
-    func compareTo(_ e: Person) -> Int {
-        return 0
-    }
-//        func compareT
-//    func compareTo(_ e: Int) -> Int {
-//        return 0
+//    func compareTo(_ e: Person) -> Int {
+//        return self.age-e.age
 //    }
+    func compareTo(element2: Person) -> Int {
+        return self.age-element2.age
+    }
 }

@@ -15,20 +15,20 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         self.view.backgroundColor=UIColor.red
         
-        let array:[Int]=[7,4,9,2,5,8,11,3]
-        
+//        let array:[Int]=[7,4,9,2,5,8,11,3]
+//
 //        let tree=BinarySearchTree<Int>()
 //        for  num in array{
 //            tree.add(element: num)
 //        }
         
-//        let tree=BinarySearchTree<Person>()
-//        tree.add(element: Person(7))
-//        tree.add(element: Person(4))
-//        tree.add(element: Person(9))
-//        tree.add(element: Person(2))
-//        tree.add(element: Person(5))
-//        tree.add(element: Person(8))
+        let tree=BinarySearchTree<Person>()
+        tree.add(element: Person(7))
+        tree.add(element: Person(4))
+        tree.add(element: Person(9))
+        tree.add(element: Person(2))
+        tree.add(element: Person(5))
+        tree.add(element: Person(8))
     }
 
 

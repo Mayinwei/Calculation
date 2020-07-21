@@ -9,6 +9,16 @@
 import UIKit
 
 protocol Compactor {
+    //解释Suffix 必须遵守SuffixableContainer这个协议，以及Suffix中的Item必须Comparable的Item（也就是T必须是一个类型）
+//    associatedtype Suffix: SuffixableContainer where Suffix.Item == Item
     associatedtype T
-    func compare(e1:T,e2:T) -> Int 
+    func compareTo(element2:T) -> Int
+}
+
+extension  Int :Compactor{
+    func compareTo(element2: Int) -> Int {
+        return 0
+    }
+    
+    typealias T = Int
 }
