@@ -18,10 +18,8 @@ class Person: NSObject,Compactor{
         super.init()
         self.age=age
     }
-//    func compareTo(_ e: Person) -> Int {
-//        return self.age-e.age
-//    }
-    func compareTo(element2: Person) -> Int {
+    func compareTo(_ element2: Person) -> Int {
         return self.age-element2.age
     }
+    
 }

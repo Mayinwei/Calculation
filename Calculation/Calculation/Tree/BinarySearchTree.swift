@@ -9,7 +9,7 @@
 import UIKit
 
 class BinarySearchTree<T:Compactor>: NSObject {
-
+    
     var size:Int = 0
     private var root:Node<T>? //根节点
 //    private var comparable:Compactor? //比较器协议
@@ -45,17 +45,17 @@ class BinarySearchTree<T:Compactor>: NSObject {
         //添加的不是跟节点
         var parent:Node=root!
         var node:Node?=root!
-        print("node=\(node)")
         var comp:Int=0
         while node != nil {
             comp=compare(element1: element, element2: node!.element!)
             parent=node!
-            if comp==0 {
-                return
-            }else if comp>0{
+            if comp>0{
                 node=node!.left
-            }else{
+            }else if comp<0{
                 node=node!.right
+            }else{
+                node?.element=element
+                return
             }
         }
         
@@ -77,7 +77,20 @@ class BinarySearchTree<T:Compactor>: NSObject {
         return false
     }
     
+    func preorderTraversal() {
+        preorderTraversal(node: root)
+    }
     
+    
+    private func preorderTraversal(node:Node<T>?){
+        guard let node=node else{
+            return
+        }
+        print(node.element as Any)
+        preorderTraversal(node:node.left)
+        preorderTraversal(node:node.right)
+
+    }
     
     /// 比较两个节点
     /// - Parameters:
@@ -90,10 +103,13 @@ class BinarySearchTree<T:Compactor>: NSObject {
 //      return   element1.compareTo(element2)
         if element1 is Int {
             let a=(element1 as! Int)-(element2 as! Int)
-            print(a)
             return a
         }else{
-            return element1.compareTo(element2: T.Type.self as! T.T)
+            return 0;
+//            return element1.compareTo(element2)
+//            return element1.compareTo(e2: T.self as! T)
+//            element1.compareTo(element2)
+//            return element1.compareTo(element2: T.Type.self as! T.T)
         }
     }
 }
