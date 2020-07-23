@@ -15,30 +15,19 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         self.view.backgroundColor=UIColor.red
         
-        let array:[Int]=[7,4,9,2,5,8,11,3]
+        let array:[Int]=[7,4,9,2,1,3,5,8,11,10,12]
 
         let tree=BinarySearchTree<Int>()
-        tree.add(element: 7)
-        tree.add(element: 4)
-        tree.add(element: 9)
-        tree.add(element: 2)
-        tree.add(element: 5)
-        tree.add(element: 8)
-        tree.add(element: 11)
-        tree.add(element: 3)
-        print("\(tree.sizeFun())")
-//        for  (item,num) in array.enumerated(){
-//            print("\(num)")
-//
-//        }
-        tree.preorderTraversal()
-//        let tree=BinarySearchTree<Person>()
-//        tree.add(element: Person(7))
-//        tree.add(element: Person(4))
-//        tree.add(element: Person(9))
-//        tree.add(element: Person(2))
-//        tree.add(element: Person(5))
-//        tree.add(element: Person(8))
+        for  num in array{
+            tree.add(element: num)
+        }
+        
+//        //中序遍历
+//        tree.inorderTraversal()
+//        //前序遍历
+//        tree.preorderTraversal()
+        //层序遍历
+        tree.levelorderTraversal()
     }
 
 

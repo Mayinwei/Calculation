@@ -10,7 +10,7 @@ import UIKit
 
 class BinarySearchTree<T:Compactor>: NSObject {
     
-    var size:Int = 0
+    private var size:Int = 0
     private var root:Node<T>? //根节点
 //    private var comparable:Compactor? //比较器协议
 //    let compactor:Compactor
@@ -77,6 +77,8 @@ class BinarySearchTree<T:Compactor>: NSObject {
         return false
     }
     
+    
+    //前序遍历:先遍历根节点，左子树，右子树
     func preorderTraversal() {
         preorderTraversal(node: root)
     }
@@ -86,11 +88,58 @@ class BinarySearchTree<T:Compactor>: NSObject {
         guard let node=node else{
             return
         }
-        print("节点=\(node.element)")
+        print("前序节点=\(String(describing: node.element))")
         preorderTraversal(node:node.left)
         preorderTraversal(node:node.right)
 
     }
+    
+    //中序遍历:把根节点放在中间，先访问左右哪个子树都行，最终结果是从左在前【小到大】正序排列，右在前是从大到小
+    func inorderTraversal(){
+        inorderTraversal(node: root)
+    }
+    private func inorderTraversal(node:Node<T>?){
+        guard let node=node else{
+            return
+        }
+        inorderTraversal(node:node.left)
+        print("中序遍历=\(String(describing: node.element))")
+        inorderTraversal(node:node.right)
+    }
+    
+    
+    //层序遍历
+    /**
+     1.通过队列的形式实现层层遍历
+     2.将根节点插入队列中
+     3.循环如下操作
+        3.1，将队头节点A出队，进行访问
+        3.2，将A的左子节点入队，
+        3.3，遍历完A的左子节点，将右子节点入队
+     4.效果，达到默写程度
+     */
+    func levelorderTraversal() {
+        guard let root=root else {
+            return
+        }
+        var queue:[Node<T>]=Array()
+        queue.append(root)
+        while queue.count>0 {
+            let nodeFirst=queue.first
+            print("层序遍历=\(String(describing: nodeFirst?.element))")
+            queue.remove(at: 0)
+            if let node = nodeFirst?.left  {
+                queue.append(node)
+            }
+            
+            if let node = nodeFirst?.right {
+                queue.append(node)
+            }
+            
+        }
+        
+    }
+    
     
     /// 比较两个节点
     /// - Parameters:
@@ -104,10 +153,6 @@ class BinarySearchTree<T:Compactor>: NSObject {
             return a
         }else{
             return 0;
-//            return element1.compareTo(element2)
-//            return element1.compareTo(e2: T.self as! T)
-//            element1.compareTo(element2)
-//            return element1.compareTo(element2: T.Type.self as! T.T)
         }
     }
 }
