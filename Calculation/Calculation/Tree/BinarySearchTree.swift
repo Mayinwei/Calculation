@@ -50,9 +50,9 @@ class BinarySearchTree<T:Compactor>: NSObject {
             comp=compare(element1: element, element2: node!.element!)
             parent=node!
             if comp>0{
-                node=node!.left
-            }else if comp<0{
                 node=node!.right
+            }else if comp<0{
+                node=node!.left
             }else{
                 node?.element=element
                 return
@@ -86,7 +86,7 @@ class BinarySearchTree<T:Compactor>: NSObject {
         guard let node=node else{
             return
         }
-        print(node.element as Any)
+        print("节点=\(node.element)")
         preorderTraversal(node:node.left)
         preorderTraversal(node:node.right)
 
@@ -99,8 +99,6 @@ class BinarySearchTree<T:Compactor>: NSObject {
     /// - Returns: 比较结果：0是相等。大于0，e1>e2。小于0,e1<e2
     private func compare(element1:T,element2:T)->Int
     {
-//        element1.comp T.Type.self == Int.Type.self
-//      return   element1.compareTo(element2)
         if element1 is Int {
             let a=(element1 as! Int)-(element2 as! Int)
             return a

@@ -19,4 +19,8 @@ class Node<T>: NSObject {
         self.element=element
         self.parent=parent
     }
+    
+    override class func description() -> String {
+        return "ddddddd"
+    }
 }
