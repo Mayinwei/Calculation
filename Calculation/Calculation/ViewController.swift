@@ -21,13 +21,31 @@ class ViewController: UIViewController {
         for  num in array{
             tree.add(element: num)
         }
-        
+        print(tree.height2())
 //        //中序遍历
 //        tree.inorderTraversal()
 //        //前序遍历
-//        tree.preorderTraversal()
-        //层序遍历
-        tree.levelorderTraversal()
+//        tree.preorderTraversal { (element) -> Bool in
+//
+//            if element==8 {
+//                return true
+//            }else{
+//                print("前序遍历=\(element)")
+//                return false
+//            }
+//        }
+        
+        
+//        tree.levelOrder { (element) -> (Bool) in
+//            var a=0
+//            if element==8 {
+//                return true
+//            }else{
+//                a+=1
+//                print("\(element)---a=\(a)")
+//                return false
+//            }
+//        }
     }
 
 
