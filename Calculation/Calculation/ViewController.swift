@@ -15,13 +15,13 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         self.view.backgroundColor=UIColor.red
         
-        let array:[Int]=[7,4,9,2,1,3,5,8,11,10,12]
-
+//        let array:[Int]=[7,4,9,2,1,3,5,8,11,10,12]
+        let array:[Int]=[7,4,9,2]
         let tree=BinarySearchTree<Int>()
         for  num in array{
             tree.add(element: num)
         }
-        print(tree.height2())
+        print(tree.isComlpete())
 //        //中序遍历
 //        tree.inorderTraversal()
 //        //前序遍历

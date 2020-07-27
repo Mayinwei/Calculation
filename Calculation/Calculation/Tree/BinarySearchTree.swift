@@ -251,5 +251,35 @@ class BinarySearchTree<T:Compactor>: NSObject {
         }
         return height
     }
+    
+    
+    
+    //判断是否为完全二叉树
+    func isComlpete() -> Bool {
+        
+        guard let root=root else {
+            return false
+        }
+        var isLeaf=false
+        var queue:[Node<T>]=Array()
+        queue.append(root)
+        while queue.count>0 {
+            let nodeFirst=queue.first
+            queue.remove(at: 0)
+            if isLeaf && !(nodeFirst?.isLeaf())! {
+                return false
+            }
+            if (nodeFirst?.haveTowChildren())! {
+                queue.append((nodeFirst?.left)!)
+                queue.append((nodeFirst?.right)!)
+            }else if nodeFirst?.left == nil && nodeFirst?.right != nil {
+                return false
+            }else{
+                //这里是叶子节点了
+                isLeaf=true
+            }
+        }
+       return true
+    }
 }
 

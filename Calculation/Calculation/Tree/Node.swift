@@ -20,7 +20,16 @@ class Node<T>: NSObject {
         self.parent=parent
     }
     
-    override class func description() -> String {
-        return "ddddddd"
+    /// 是否为叶子节点
+    /// - Returns: 结果
+    func isLeaf() -> Bool {
+        return self.left==nil && self.right==nil
+    }
+    
+    
+    /// 拥有两个子节点
+    /// - Returns: 结果
+    func haveTowChildren() -> Bool {
+        return self.left != nil && self.right != nil
     }
 }
