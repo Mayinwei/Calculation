@@ -208,6 +208,22 @@ class BinarySearchTree<T:Compactor>: NSObject {
         description(node: node.right, sb: sb, prefix: prefix+"---R---")
     }
     
+    //打印所有节点
+    func printTreeNode() ->NSMutableArray{
+        var array=NSMutableArray()
+        printTreeNode(node: root, array: array)
+        return array
+    }
+    
+    private func printTreeNode(node:Node<T>?,array:NSMutableArray){
+        guard let node=node else {
+            return
+        }
+        printTreeNode(node: node.left, array: array)
+        array.add(node)
+        printTreeNode(node: node.right, array: array)
+    }
+    
     //【1】二叉树遍历高度
     func height() -> Int {
         return height(node: root)
@@ -256,7 +272,6 @@ class BinarySearchTree<T:Compactor>: NSObject {
     
     //判断是否为完全二叉树
     func isComlpete() -> Bool {
-        
         guard let root=root else {
             return false
         }
@@ -275,11 +290,68 @@ class BinarySearchTree<T:Compactor>: NSObject {
             }else if nodeFirst?.left == nil && nodeFirst?.right != nil {
                 return false
             }else{
-                //这里是叶子节点了
+                //这里必须是叶子节点了
                 isLeaf=true
+                if nodeFirst?.left != nil {
+                    queue.append((nodeFirst?.left)!)
+                }
             }
         }
        return true
+    }
+    
+    
+    //简洁的判断是否为完全二叉树
+    func isComplete2()->Bool{
+        guard let root = root else {
+            return false
+        }
+        var queue:[Node<T>]=Array()
+        queue.append(root)
+        var isLeaf=false
+        while queue.count>0 {
+            let nodeFirst=queue.first
+            queue.remove(at: 0)
+            if isLeaf && !(nodeFirst?.isLeaf())! {
+                return false
+            }
+            if nodeFirst?.left != nil {
+                queue.append(nodeFirst!.left!)
+            }else if nodeFirst?.right != nil{
+                return false
+            }
+            
+            if nodeFirst?.right != nil {
+                queue.append(nodeFirst!.right!)
+            }else {
+                isLeaf=true
+            }
+        }
+        return true
+    }
+    
+    
+    //前驱节点:中序遍历中该节点的前一个节点
+    func predecessor(node:Node<T>?) -> Node<T>? {
+        guard  var node = node else {
+            return nil
+        }
+        
+        //【1】如果该节点的左子树不为空，一直 node.left.left.left.....
+        var p=node.left
+        if p != nil{
+            while (p?.right != nil) {
+                p=p?.right!
+            }
+            return p
+        }
+        
+        //【2】在该节点的右子树中查找 ，从父节点，祖父节点 中查找前驱节点
+        while (node.parent != nil && node == node.parent?.left) {
+            node=node.parent!
+        }
+        
+        return node
     }
 }
 

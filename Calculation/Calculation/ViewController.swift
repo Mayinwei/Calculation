@@ -15,13 +15,18 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         self.view.backgroundColor=UIColor.red
         
-//        let array:[Int]=[7,4,9,2,1,3,5,8,11,10,12]
-        let array:[Int]=[7,4,9,2]
+        let array:[Int]=[7,4,9,2,1,3,5,8,11,10,12]
         let tree=BinarySearchTree<Int>()
         for  num in array{
             tree.add(element: num)
         }
-        print(tree.isComlpete())
+        print("整体节点")
+        print(tree.printTree())
+        let arrayNode=tree.printTreeNode()
+        let node=arrayNode[arrayNode.count/2] as! Node<Int>
+        print("选中的节点=\(node.element)")
+        let pre=tree.predecessor(node: node)
+        print("前驱节点=\(pre?.element)")
 //        //中序遍历
 //        tree.inorderTraversal()
 //        //前序遍历
@@ -49,5 +54,54 @@ class ViewController: UIViewController {
     }
 
 
+    //前序遍历
+    func invertTree(_ root: TreeNode?) -> TreeNode? {
+        
+        guard let root = root else {
+            return nil
+        }
+        
+        let temp=root.left
+        root.left=root.right
+        root.right=temp
+        
+        invertTree(root.left)
+        invertTree(root.right)
+        
+        
+        return root
+    }
+    
+    //层序遍历
+    func invertTree2(_ root: TreeNode?) -> TreeNode? {
+        
+        guard let root = root else {
+            return nil
+        }
+        
+        var queue:[TreeNode]=Array()
+        queue.append(root)
+        
+        while queue.count>0 {
+            let nodeFirst=queue.first
+            queue.remove(at: 0)
+            let temp=nodeFirst!.left
+            nodeFirst!.left=nodeFirst!.right
+            nodeFirst!.right=temp
+            if nodeFirst?.left != nil {
+                queue.append(nodeFirst!.left!)
+            }
+            
+            if nodeFirst?.right != nil {
+                queue.append(nodeFirst!.right!)
+            }
+            
+            
+            
+        }
+        
+        return root
+    }
+    
 }
 
