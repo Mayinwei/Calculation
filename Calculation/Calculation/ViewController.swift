@@ -22,11 +22,9 @@ class ViewController: UIViewController {
         }
         print("整体节点")
         print(tree.printTree())
-        let arrayNode=tree.printTreeNode()
-        let node=arrayNode[arrayNode.count/2] as! Node<Int>
-        print("选中的节点=\(node.element)")
-        let pre=tree.predecessor(node: node)
-        print("前驱节点=\(pre?.element)")
+        tree.remove(element: 5)
+        print("\n\n\n")
+        print(tree.printTree())
 //        //中序遍历
 //        tree.inorderTraversal()
 //        //前序遍历

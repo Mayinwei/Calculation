@@ -78,8 +78,8 @@
             filePath = "Calculation/Tree/BinarySearchTree.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "342"
-            endingLineNumber = "342"
+            startingLineNumber = "409"
+            endingLineNumber = "409"
             landmarkName = "predecessor(node:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -94,8 +94,8 @@
             filePath = "Calculation/Tree/BinarySearchTree.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "346"
-            endingLineNumber = "346"
+            startingLineNumber = "413"
+            endingLineNumber = "413"
             landmarkName = "predecessor(node:)"
             landmarkType = "7">
          </BreakpointContent>
