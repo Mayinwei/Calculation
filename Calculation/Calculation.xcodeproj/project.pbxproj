@@ -15,6 +15,7 @@
 		652631C724C4750F00399D03 /* BinarySearchTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652631C624C4750F00399D03 /* BinarySearchTree.swift */; };
 		652631C924C47AB400399D03 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652631C824C47AB400399D03 /* Node.swift */; };
 		65ADF45024D0518F0078534C /* TreeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65ADF44F24D0518F0078534C /* TreeNode.swift */; };
+		65CA3C3F24D2ECCA0029CA5F /* BinaryTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CA3C3E24D2ECCA0029CA5F /* BinaryTree.swift */; };
 		65DA317B24C5CD2A00D159F7 /* Compactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DA317A24C5CD2A00D159F7 /* Compactor.swift */; };
 		65DA317D24C5D71800D159F7 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DA317C24C5D71800D159F7 /* Person.swift */; };
 /* End PBXBuildFile section */
@@ -30,6 +31,7 @@
 		652631C624C4750F00399D03 /* BinarySearchTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinarySearchTree.swift; sourceTree = "<group>"; };
 		652631C824C47AB400399D03 /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		65ADF44F24D0518F0078534C /* TreeNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeNode.swift; sourceTree = "<group>"; };
+		65CA3C3E24D2ECCA0029CA5F /* BinaryTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryTree.swift; sourceTree = "<group>"; };
 		65DA317A24C5CD2A00D159F7 /* Compactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Compactor.swift; sourceTree = "<group>"; };
 		65DA317C24C5D71800D159F7 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,6 +82,7 @@
 		652631C524C4748100399D03 /* Tree */ = {
 			isa = PBXGroup;
 			children = (
+				65CA3C3E24D2ECCA0029CA5F /* BinaryTree.swift */,
 				652631C624C4750F00399D03 /* BinarySearchTree.swift */,
 				652631C824C47AB400399D03 /* Node.swift */,
 				65DA317A24C5CD2A00D159F7 /* Compactor.swift */,
@@ -166,6 +169,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65CA3C3F24D2ECCA0029CA5F /* BinaryTree.swift in Sources */,
 				65ADF45024D0518F0078534C /* TreeNode.swift in Sources */,
 				65DA317D24C5D71800D159F7 /* Person.swift in Sources */,
 				65DA317B24C5CD2A00D159F7 /* Compactor.swift in Sources */,

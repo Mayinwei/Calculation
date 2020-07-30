@@ -25,6 +25,8 @@ class ViewController: UIViewController {
         tree.remove(element: 5)
         print("\n\n\n")
         print(tree.printTree())
+        
+        
 //        //中序遍历
 //        tree.inorderTraversal()
 //        //前序遍历
