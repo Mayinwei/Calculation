@@ -8,9 +8,17 @@
 
 import UIKit
 
-class BinarySearchTree<T:Compactor>: BinaryTree<T>{
+protocol BinarySearchTreeProtocol {
+    associatedtype E
+    func afterAdd(node:Node<E>);
+
+}
+class BinarySearchTree<T:Compactor>: BinaryTree<T>,BinarySearchTreeProtocol{
+    typealias E = T
     
-    
+    func afterAdd(node: Node<T>) {
+        print("ddddddd")
+    }
 
     func contains(element:T)->Bool{
 
@@ -24,12 +32,12 @@ class BinarySearchTree<T:Compactor>: BinaryTree<T>{
             print("传入节点为null")
             return
         }
-        
         //添加第一个节点
         if root==nil {
-            root=Node(element:element, parent: nil)
+            root=createNode(element: element, parent: nil)
             return
         }
+        afterAdd(node: root!)
         //添加的不是跟节点
         var parent:Node=root!
         var node:Node?=root!
@@ -47,7 +55,7 @@ class BinarySearchTree<T:Compactor>: BinaryTree<T>{
             }
         }
         
-        let nwNode=Node(element: element, parent: parent)
+        let nwNode=createNode(element: element, parent: parent)
         if comp>0 {
             parent.right = nwNode
         }else{
@@ -56,10 +64,17 @@ class BinarySearchTree<T:Compactor>: BinaryTree<T>{
         size+=1
     }
     
+    //创建新节点
+    func createNode(element:T,parent:Node<T>?) -> Node<T> {
+        return Node(element: element, parent: parent)
+    }
+    
     //根据节点内容删除节点
     func remove(element:T){
         remove(node: node(element: element))
     }
+    
+    
     
     func remove(node:Node<T>?) {
         guard  var node = node else {

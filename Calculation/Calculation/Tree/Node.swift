@@ -32,4 +32,16 @@ class Node<T>: NSObject {
     func haveTowChildren() -> Bool {
         return self.left != nil && self.right != nil
     }
+    
+    /// 判断节点是否为父节点的左边
+    /// - Returns: 是否为左节点
+    func isLeftChild() -> Bool {
+        return parent != nil && self == parent?.left
+    }
+    
+    /// 判断节点是否为父节点的右边
+    /// - Returns: 是否为右节点
+    func isRightChild() -> Bool {
+        return parent != nil && self == parent?.right
+    }
 }

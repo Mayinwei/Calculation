@@ -18,6 +18,7 @@
 		65CA3C3F24D2ECCA0029CA5F /* BinaryTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CA3C3E24D2ECCA0029CA5F /* BinaryTree.swift */; };
 		65DA317B24C5CD2A00D159F7 /* Compactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DA317A24C5CD2A00D159F7 /* Compactor.swift */; };
 		65DA317D24C5D71800D159F7 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DA317C24C5D71800D159F7 /* Person.swift */; };
+		65E6786724D8317300DEE18A /* AVLTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E6786624D8317300DEE18A /* AVLTree.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		65CA3C3E24D2ECCA0029CA5F /* BinaryTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryTree.swift; sourceTree = "<group>"; };
 		65DA317A24C5CD2A00D159F7 /* Compactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Compactor.swift; sourceTree = "<group>"; };
 		65DA317C24C5D71800D159F7 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		65E6786624D8317300DEE18A /* AVLTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVLTree.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				65ADF44E24D051720078534C /* 翻转二叉树 */,
+				65E6786524D8315500DEE18A /* AVL树 */,
 				652631C524C4748100399D03 /* Tree */,
 				652631B124C471FE00399D03 /* AppDelegate.swift */,
 				652631B524C471FE00399D03 /* ViewController.swift */,
@@ -96,6 +99,14 @@
 				65ADF44F24D0518F0078534C /* TreeNode.swift */,
 			);
 			path = "翻转二叉树";
+			sourceTree = "<group>";
+		};
+		65E6786524D8315500DEE18A /* AVL树 */ = {
+			isa = PBXGroup;
+			children = (
+				65E6786624D8317300DEE18A /* AVLTree.swift */,
+			);
+			path = "AVL树";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,6 +180,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65E6786724D8317300DEE18A /* AVLTree.swift in Sources */,
 				65CA3C3F24D2ECCA0029CA5F /* BinaryTree.swift in Sources */,
 				65ADF45024D0518F0078534C /* TreeNode.swift in Sources */,
 				65DA317D24C5D71800D159F7 /* Person.swift in Sources */,

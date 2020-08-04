@@ -15,16 +15,18 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         self.view.backgroundColor=UIColor.red
         
+        
         let array:[Int]=[7,4,9,2,1,3,5,8,11,10,12]
-        let tree=BinarySearchTree<Int>()
+//        let tree=BinarySearchTree<Int>()
+        let tree=AVLTree<Int>()
         for  num in array{
             tree.add(element: num)
         }
         print("整体节点")
-        print(tree.printTree())
-        tree.remove(element: 5)
-        print("\n\n\n")
-        print(tree.printTree())
+//        print(tree.printTree())
+//        tree.remove(element: 5)
+//        print("\n\n\n")
+//        print(tree.printTree())
         
         
 //        //中序遍历
