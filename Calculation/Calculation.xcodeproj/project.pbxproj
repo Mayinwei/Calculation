@@ -19,6 +19,7 @@
 		65DA317B24C5CD2A00D159F7 /* Compactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DA317A24C5CD2A00D159F7 /* Compactor.swift */; };
 		65DA317D24C5D71800D159F7 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DA317C24C5D71800D159F7 /* Person.swift */; };
 		65E6786724D8317300DEE18A /* AVLTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E6786624D8317300DEE18A /* AVLTree.swift */; };
+		D5960ADD2674E26D0042D51C /* JiChuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5960ADC2674E26D0042D51C /* JiChuViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		65DA317A24C5CD2A00D159F7 /* Compactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Compactor.swift; sourceTree = "<group>"; };
 		65DA317C24C5D71800D159F7 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		65E6786624D8317300DEE18A /* AVLTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVLTree.swift; sourceTree = "<group>"; };
+		D5960ADC2674E26D0042D51C /* JiChuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JiChuViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 				652631B124C471FE00399D03 /* AppDelegate.swift */,
 				652631B524C471FE00399D03 /* ViewController.swift */,
 				65DA317C24C5D71800D159F7 /* Person.swift */,
+				D5960ADC2674E26D0042D51C /* JiChuViewController.swift */,
 				652631B724C471FE00399D03 /* Main.storyboard */,
 				652631BA24C4720100399D03 /* Assets.xcassets */,
 				652631BC24C4720100399D03 /* LaunchScreen.storyboard */,
@@ -182,6 +185,7 @@
 			files = (
 				65E6786724D8317300DEE18A /* AVLTree.swift in Sources */,
 				65CA3C3F24D2ECCA0029CA5F /* BinaryTree.swift in Sources */,
+				D5960ADD2674E26D0042D51C /* JiChuViewController.swift in Sources */,
 				65ADF45024D0518F0078534C /* TreeNode.swift in Sources */,
 				65DA317D24C5D71800D159F7 /* Person.swift in Sources */,
 				65DA317B24C5CD2A00D159F7 /* Compactor.swift in Sources */,
