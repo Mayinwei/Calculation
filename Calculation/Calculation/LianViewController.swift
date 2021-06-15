@@ -14,12 +14,30 @@ class LianViewController: UIViewController {
         super.viewDidLoad()
 
         self.view.backgroundColor=UIColor.white
-        let node3 = ListNode(vals: 3, nexts: nil)
-        let node2 = ListNode(vals: 2, nexts: node3)
-        let node = ListNode(vals: 1, nexts: nil)
+        var node4:ListNode? = nil
         
-        let result = removeNthFromEnd(node, 1);
-        print(result?.printNode())
+        
+        let node6 = ListNode(vals: 6, nexts: nil)
+        let node5 = ListNode(vals: 5, nexts: node6)
+        node4 = ListNode(vals: 4, nexts: node5)
+        node6.next = node4
+        let node3 = ListNode(vals: 3, nexts: node4)
+        let node2 = ListNode(vals: 2, nexts: node3)
+        let node = ListNode(vals: 1, nexts: node2)
+        
+//        let result = removeNthFromEnd(node, 1);
+//        print(result?.printNode())
+        
+        //判断两个链表是否有相交
+//        let node6 = ListNode(vals: 0, nexts: node)
+//        let node5 = ListNode(vals: -1, nexts: node6)
+//        let node4 = ListNode(vals: -2, nexts: node5)
+//
+//        let result = getIntersectionNode(nodeA: node4, nodeB: node)
+//        print(result?.printNode())
+        
+        let result = detectCycle(node)
+        print(result?.val)
     }
     
     //【1】删除节点中的元素,并返回新的头节点
@@ -107,12 +125,93 @@ class LianViewController: UIViewController {
         slowNode?.next = slowNode?.next?.next
         return dummpNode.next
     }
+    
+    //【5】判断链表是否有相交
+    func getIntersectionNode(nodeA:ListNode,nodeB:ListNode) -> ListNode? {
+        var curA:ListNode? = nodeA
+        var curB:ListNode? = nodeB
+        //计算两个链表的长度
+        var lengthA = 0
+        var lengthB = 0
+        
+        while curA != nil {
+            lengthA += 1
+            curA = curA?.next
+        }
+        
+        while curB != nil {
+            lengthB += 1
+            curB = curB?.next
+        }
+        
+        curA = nodeA
+        curB = nodeB
+        
+        //让curA为最长的表头，lengthA为最长的长度
+        if lengthB > lengthA  {
+            curA = nodeB
+            curB = nodeA
+            
+            lengthA = lengthB
+            lengthB = lengthA
+        }
+        
+        //移动最长A和B平行
+        var gap = lengthA - lengthB
+        while gap > 0 {
+            gap -= 1
+            curA = curA?.next
+        }
+        
+        //核心：判断是否有相等的
+        
+        while curA?.next != nil {
+            if curB == curA {
+                return curA
+            }
+            
+            curA = curA?.next
+            curB = curB?.next
+        }
+        
+        return nil
+    }
+    
+    
+    //【6】判断是否环，有的话，找到环的入口
+    func detectCycle(_ head: ListNode?) -> ListNode? {
+        var fast:ListNode? = head
+        var slow:ListNode? = head
+        
+        while fast != nil && fast?.next != nil {
+            fast = fast?.next?.next
+            slow = slow?.next
+            
+            if fast == slow {
+                //此时相遇，有环
+                //计算环的入口
+                var index1 = fast
+                var index2 = head
+                while index1 != index2 {
+                    index1 = index1?.next
+                    index2 = index2?.next
+                }
+                return index1
+            }
+            
+        }
+        //没有环，也就没有环的入口
+        return nil
+    }
+    
+    
+    
 }
 
-class ListNode {
+class ListNode:NSObject {
     var val:Int = 0
     var next:ListNode?
-    init() {
+    override init() {
         val = 0
         next = nil
     }
