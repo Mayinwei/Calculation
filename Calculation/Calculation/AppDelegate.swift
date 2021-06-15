@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window=UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor=UIColor.white
         
-        window?.rootViewController=HashTableViewController()
+        window?.rootViewController=KMPViewController()
         window?.makeKeyAndVisible()
         
         return true
