@@ -22,6 +22,9 @@
 		849AEA542678797800490827 /* HashTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849AEA532678797800490827 /* HashTableViewController.swift */; };
 		D55D4B1F26777BF50042CAD2 /* LianViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55D4B1E26777BF50042CAD2 /* LianViewController.swift */; };
 		D5960ADD2674E26D0042D51C /* JiChuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5960ADC2674E26D0042D51C /* JiChuViewController.swift */; };
+		D5B257FD267A365E00D38B08 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B257FC267A365E00D38B08 /* Stack.swift */; };
+		D5B257FF267A377900D38B08 /* StackOrQueueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B257FE267A377900D38B08 /* StackOrQueueViewController.swift */; };
+		D5B25801267A383C00D38B08 /* MyQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B25800267A383C00D38B08 /* MyQueue.swift */; };
 		D5ECA0712678E35300585422 /* KMPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5ECA0702678E35300585422 /* KMPViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +46,9 @@
 		849AEA532678797800490827 /* HashTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashTableViewController.swift; sourceTree = "<group>"; };
 		D55D4B1E26777BF50042CAD2 /* LianViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LianViewController.swift; sourceTree = "<group>"; };
 		D5960ADC2674E26D0042D51C /* JiChuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JiChuViewController.swift; sourceTree = "<group>"; };
+		D5B257FC267A365E00D38B08 /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
+		D5B257FE267A377900D38B08 /* StackOrQueueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackOrQueueViewController.swift; sourceTree = "<group>"; };
+		D5B25800267A383C00D38B08 /* MyQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyQueue.swift; sourceTree = "<group>"; };
 		D5ECA0702678E35300585422 /* KMPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KMPViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,6 +92,9 @@
 				D55D4B1E26777BF50042CAD2 /* LianViewController.swift */,
 				849AEA532678797800490827 /* HashTableViewController.swift */,
 				D5ECA0702678E35300585422 /* KMPViewController.swift */,
+				D5B25800267A383C00D38B08 /* MyQueue.swift */,
+				D5B257FC267A365E00D38B08 /* Stack.swift */,
+				D5B257FE267A377900D38B08 /* StackOrQueueViewController.swift */,
 				652631B724C471FE00399D03 /* Main.storyboard */,
 				652631BA24C4720100399D03 /* Assets.xcassets */,
 				652631BC24C4720100399D03 /* LaunchScreen.storyboard */,
@@ -194,11 +203,14 @@
 			files = (
 				65E6786724D8317300DEE18A /* AVLTree.swift in Sources */,
 				D5ECA0712678E35300585422 /* KMPViewController.swift in Sources */,
+				D5B257FD267A365E00D38B08 /* Stack.swift in Sources */,
+				D5B25801267A383C00D38B08 /* MyQueue.swift in Sources */,
 				65CA3C3F24D2ECCA0029CA5F /* BinaryTree.swift in Sources */,
 				D5960ADD2674E26D0042D51C /* JiChuViewController.swift in Sources */,
 				65ADF45024D0518F0078534C /* TreeNode.swift in Sources */,
 				65DA317D24C5D71800D159F7 /* Person.swift in Sources */,
 				65DA317B24C5CD2A00D159F7 /* Compactor.swift in Sources */,
+				D5B257FF267A377900D38B08 /* StackOrQueueViewController.swift in Sources */,
 				652631B624C471FE00399D03 /* ViewController.swift in Sources */,
 				652631B224C471FE00399D03 /* AppDelegate.swift in Sources */,
 				652631C724C4750F00399D03 /* BinarySearchTree.swift in Sources */,
