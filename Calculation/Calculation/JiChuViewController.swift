@@ -31,17 +31,19 @@ class JiChuViewController: UIViewController {
 //        print(result)
         
         //【4】滑动窗口
-//        let array = [2,3,1,2,4,3]
-//        let result = minSubArrayLen(target:7, nums: array)
-//        print(result)
+        let array = [2,7,11,15]
+        let result = minSubArrayLen(target:9, nums: array)
+        print(result)
         
         //滑动窗口变种
 //        let result = minSubArrayLen(s: "ABDXDFTEDFFD", t: "FD")
 //        print(result)
         
         //数组转圈
-        let result = generateMatrix(n: 3)
-        print(result)
+//        let result = generateMatrix(n: 3)
+//        print(result)
+        
+//        twoSum([2,7,11,15], 9)
     }
     
     
@@ -124,7 +126,7 @@ class JiChuViewController: UIViewController {
             }
         }
         
-        if result == MAXINTERP {
+        if result == INT64_MAX {
             return 0
         }else{
             return result
@@ -224,6 +226,56 @@ class JiChuViewController: UIViewController {
     }
     
     
-    
-    
+    //滑动窗口计算
+    func twoSum(_ nums: [Int], _ target: Int) {
+        var result = Array<Int>(repeating: 0, count: 2)
+        var temp = 0
+        var sum = 0
+        var i = 0
+        var subLength = 0
+        
+        for j in 0..<nums.count {
+            sum += nums[j]
+            //判断是否等于
+            while sum >= target && i<j {
+                subLength = j - i + 1
+                temp = temp < subLength ? temp : subLength
+                sum -= nums[i]
+                i += 1
+                result[0] = i
+                result[1] = j
+            }
+        }
+        
+        print(result,temp)
+    }
 }
+
+
+/*
+ //【4】滑动窗口（快慢指针的一种）,并返回其最小子集合的长度
+ func minSubArrayLen(target:Int,nums:[Int]) -> Int64 {
+     var result = INT64_MAX
+     var sum = 0 //相加之和
+     var i = 0 //起始位置
+     var subLength = 0 //滑动窗口的长度
+     for j in 0..<nums.count {
+         sum += nums[j]
+         //注意这里使用while ，每次更新i的位置，并不断比较子序列之和是否符合条件
+         while sum >= target {
+             subLength =  j-i+1
+             //比较是否为最小的
+             result = Int64(result < subLength ? Int(result) : subLength)
+             //变更i的起始位置
+             sum -= nums[i]
+             i += 1
+         }
+     }
+     
+     if result == MAXINTERP {
+         return 0
+     }else{
+         return result
+     }
+ }
+ */

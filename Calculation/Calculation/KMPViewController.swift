@@ -21,7 +21,10 @@ class KMPViewController: UIViewController {
 //        getNext(next: &next, s: &str)
 //        print(next)
         
-        let result = strStr("aabaabaafa", "aabaaf")
+//        let result = strStr("aabaabaafa", "aabaaf")
+//        print(result)
+        
+        let result = repeatedSubstringPattern("asdfasdfasdf")
         print(result)
     }
     
@@ -42,9 +45,7 @@ class KMPViewController: UIViewController {
             if String(sArr[i]) == String(sArr[j+1])   {
                 j += 1
             }
-            
             //将j（前缀长度）赋值给next[i]
-            
             next[i] = j
         }
     }
@@ -81,4 +82,20 @@ class KMPViewController: UIViewController {
         //没有匹配的
         return -1
     }
+    
+    //判断字符串中是否有重复子串
+    func repeatedSubstringPattern(_ s: String) -> Bool {
+        var next=Array<Int>(repeating: -1, count: s.count)
+        var newS = s
+        getNext(next: &next, s: &newS)
+        
+        let len = next.count
+        
+        if next[len-1] != -1 && len % (len-(next[len-1]+1)) == 0 {
+            return true
+        }
+        return false
+    }
+    
+    
 }

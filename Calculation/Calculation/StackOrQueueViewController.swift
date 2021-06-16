@@ -28,7 +28,6 @@ class StackOrQueueViewController: UIViewController {
         let q = MyQueue()
         q.push(1)
         q.pop()
-        print(<#T##items: Any...##Any#>)
     }
     
 
