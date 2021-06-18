@@ -21,6 +21,7 @@
 		65E6786724D8317300DEE18A /* AVLTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E6786624D8317300DEE18A /* AVLTree.swift */; };
 		849AEA542678797800490827 /* HashTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849AEA532678797800490827 /* HashTableViewController.swift */; };
 		849AEA6A267B24DC00490827 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849AEA69267B24DC00490827 /* Queue.swift */; };
+		849AEA6D267C793A00490827 /* TreeNodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849AEA6C267C793A00490827 /* TreeNodeViewController.swift */; };
 		D55D4B1F26777BF50042CAD2 /* LianViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55D4B1E26777BF50042CAD2 /* LianViewController.swift */; };
 		D5960ADD2674E26D0042D51C /* JiChuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5960ADC2674E26D0042D51C /* JiChuViewController.swift */; };
 		D5B257FD267A365E00D38B08 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B257FC267A365E00D38B08 /* Stack.swift */; };
@@ -46,6 +47,7 @@
 		65E6786624D8317300DEE18A /* AVLTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVLTree.swift; sourceTree = "<group>"; };
 		849AEA532678797800490827 /* HashTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashTableViewController.swift; sourceTree = "<group>"; };
 		849AEA69267B24DC00490827 /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
+		849AEA6C267C793A00490827 /* TreeNodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeNodeViewController.swift; sourceTree = "<group>"; };
 		D55D4B1E26777BF50042CAD2 /* LianViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LianViewController.swift; sourceTree = "<group>"; };
 		D5960ADC2674E26D0042D51C /* JiChuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JiChuViewController.swift; sourceTree = "<group>"; };
 		D5B257FC267A365E00D38B08 /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 		652631B024C471FE00399D03 /* Calculation */ = {
 			isa = PBXGroup;
 			children = (
+				849AEA6B267C792400490827 /* 二叉树 */,
 				65ADF44E24D051720078534C /* 翻转二叉树 */,
 				65E6786524D8315500DEE18A /* AVL树 */,
 				652631C524C4748100399D03 /* Tree */,
@@ -120,7 +123,6 @@
 		65ADF44E24D051720078534C /* 翻转二叉树 */ = {
 			isa = PBXGroup;
 			children = (
-				65ADF44F24D0518F0078534C /* TreeNode.swift */,
 			);
 			path = "翻转二叉树";
 			sourceTree = "<group>";
@@ -131,6 +133,15 @@
 				65E6786624D8317300DEE18A /* AVLTree.swift */,
 			);
 			path = "AVL树";
+			sourceTree = "<group>";
+		};
+		849AEA6B267C792400490827 /* 二叉树 */ = {
+			isa = PBXGroup;
+			children = (
+				65ADF44F24D0518F0078534C /* TreeNode.swift */,
+				849AEA6C267C793A00490827 /* TreeNodeViewController.swift */,
+			);
+			path = "二叉树";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,6 +219,7 @@
 				D5ECA0712678E35300585422 /* KMPViewController.swift in Sources */,
 				D5B257FD267A365E00D38B08 /* Stack.swift in Sources */,
 				D5B25801267A383C00D38B08 /* MyQueue.swift in Sources */,
+				849AEA6D267C793A00490827 /* TreeNodeViewController.swift in Sources */,
 				65CA3C3F24D2ECCA0029CA5F /* BinaryTree.swift in Sources */,
 				D5960ADD2674E26D0042D51C /* JiChuViewController.swift in Sources */,
 				65ADF45024D0518F0078534C /* TreeNode.swift in Sources */,
